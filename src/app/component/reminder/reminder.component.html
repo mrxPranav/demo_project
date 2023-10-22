@@ -1,0 +1,48 @@
+<h3>Add a reminder</h3>
+<form  [formGroup]="reminderForm">
+<table>
+  <tr>
+    <td>Name</td>
+    <td><input ngModel type="text" class="form-control" formControlName="Name"/></td>
+  </tr>
+  
+  <tr>
+    <td>Title</td>
+    <td><input ngModel type="text" class="form-control" formControlName="title"/></td>
+  </tr>
+  <tr>
+    <td>Category</td>
+    <td><input ngModel type="text" class="form-control" formControlName="cat"/></td>
+  </tr>
+  <tr>
+    <td><button (click)="saveReminder()" class="btn btn-success">Save</button></td>
+    <td><button class="btn btn-danger">Cancel</button></td>
+  </tr>
+</table>
+</form>
+
+<ion-list class="ios list-ios hydrated">
+  <ion-list-header class="ios hydrated">
+    Remindrs
+  </ion-list-header>
+  <ion-item *ngFor="let reminder of Reminders" class="user-list">
+    <ion-label>
+      <h5>
+        <ion-icon name="person"></ion-icon> {{reminder.name}}
+      </h5>
+      <p>
+        <ion-icon name="call"></ion-icon> {{reminder.title}}
+      </p>
+    </ion-label>
+    <!--
+    <div class="item-note" item-end>
+      <button ion-button clear [routerLink]="['/edit-appointment/', booking.$key]">
+        <ion-icon name="create" style="zoom:2.0"></ion-icon>
+      </button>
+      <button ion-button clear (click)="deleteBooking(booking.$key)">
+        <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+      </button>
+    </div>
+    -->
+  </ion-item>
+</ion-list>
