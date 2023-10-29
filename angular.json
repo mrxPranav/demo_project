@@ -99,14 +99,15 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": { "browserTarget": "saarthi:build:development"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "saarthi:build:production"
             },
             "development": {
-              "browserTarget": "saarthi:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "saarthi:build:development"
             }
           },
           "defaultConfiguration": "development"

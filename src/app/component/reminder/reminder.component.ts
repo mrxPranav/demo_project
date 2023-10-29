@@ -19,6 +19,7 @@ export class ReminderComponent {
     //this.rem.title = "titll"
   this.Reminders =[];
   //this.Reminders.push(this.rem);
+  console.log("Getting reminders...")
   this.getProducts();
 }
  
@@ -34,11 +35,11 @@ reminderForm = new FormGroup({
 
 getProducts(){
 
-  //this.remServ.getAllTestList().subscribe( data=>{
-   //this.Reminders= data 
+  this.remServ.getAllTestList().subscribe( data=>{
+   this.Reminders= data 
    console.log("Fetching Reminders list from server Please wait...")
    console.log(this.Reminders);
-  //});
+  });
 
 }
 saveReminder(){
@@ -49,7 +50,6 @@ saveReminder(){
   this.rem.enable = "true";
   this.remServ.saveReminder(this.rem).subscribe();
   this.reminderForm.reset();
-  this.getProducts();
   this.getProducts();
 
 }

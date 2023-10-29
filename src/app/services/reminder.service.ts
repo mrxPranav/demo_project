@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class ReminderService {
 
-  //private baseUrl = "https://saarthi-7f7j.onrender.com"
-  private baseUrl = "https://localhost:8080"
+  private baseUrl = "https://saarthi-7f7j.onrender.com/api"
+  //private baseUrl = "http://localhost:8080/api"
   reminders: Reminder[] | undefined;
   constructor(private httpclient : HttpClient) { }
 
   getAllTestList(): Observable<Reminder[]>{
-    return this.httpclient.get<Reminder[]>(`${this.baseUrl}`+'/gettest');
+    return this.httpclient.get<Reminder[]>(`${this.baseUrl}`+'/reminder/getall');
   }
 
   saveReminder(reminder: Reminder): Observable<Object>{
