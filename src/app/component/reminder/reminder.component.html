@@ -18,6 +18,10 @@
     <td><button (click)="saveReminder()" class="btn btn-success">Save</button></td>
     <td><button class="btn btn-danger">Cancel</button></td>
   </tr>
+  <tr>
+    <td><button  class="btn btn-success" (click)="updateReminder()">Update</button></td>
+    <td><button class="btn btn-danger">Cancel</button></td>
+  </tr>
 </table>
 </form>
 
@@ -34,15 +38,18 @@
         <ion-icon name="call"></ion-icon> {{reminder.title}}
       </p>
     </ion-label>
-    <!--
+
     <div class="item-note" item-end>
-      <button ion-button clear [routerLink]="['/edit-appointment/', booking.$key]">
+      <!-- <button ion-button clear [routerLink]="['/edit-appointment/', booking.$key]">
         <ion-icon name="create" style="zoom:2.0"></ion-icon>
+      </button> -->
+      <button ion-button clear (click)="editReminder(reminder)">
+        <ion-icon name="pencil-outline" style="zoom:2.0"></ion-icon>
       </button>
-      <button ion-button clear (click)="deleteBooking(booking.$key)">
+      <button ion-button clear (click)="deleteReminder(reminder.id)">
         <ion-icon name="trash" style="zoom:2.0"></ion-icon>
       </button>
     </div>
-    -->
+
   </ion-item>
 </ion-list>
